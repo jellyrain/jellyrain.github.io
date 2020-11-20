@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MySQL安装 - Jellyrain</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="jellyrain,"> 
+    <meta name="description" content="MySQL的安装教程
+1.MySQL的简单介绍：MySQL关是一种关系数据库管理系统，所使用的 SQL 语言是用于访问数据库的最常用的标准化语言，其特点为体积小、速度快、总体拥有成本低，尤其是开放源,"> 
+    <meta name="author" content="jellyrain"> 
+    <link rel="alternative" href="atom.xml" title="Jellyrain" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Jellyrain</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">MySQL安装</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://wx3.sinaimg.cn/large/005LKmWPly1gkrbj2zkgkj30xc0kv15p.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
+                
+                十月 01, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/10/01/MySQL%E5%AE%89%E8%A3%85/" title="MySQL安装" class="">MySQL安装</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    3.8k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    3 mins.
+                </span>
+                
+                
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>MySQL的安装教程</p>
+<h3 id="1-MySQL的简单介绍："><a href="#1-MySQL的简单介绍：" class="headerlink" title="1.MySQL的简单介绍："></a>1.MySQL的简单介绍：</h3><p>MySQL关是一种关系数据库管理系统，所使用的 SQL 语言是用于访问数据库的最常用的标准化语言，其特点为体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，在 Web应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
+<h3 id="2-MySQL安装教学"><a href="#2-MySQL安装教学" class="headerlink" title="2.MySQL安装教学:"></a>2.MySQL安装教学:</h3><h4 id="1-下载MySQL："><a href="#1-下载MySQL：" class="headerlink" title="1.下载MySQL："></a>1.下载MySQL：</h4><p>MySQL官网：<a target="_blank" rel="noopener" href="https://www.mysql.com/">https://www.mysql.com</a>  </p>
+<ol>
+<li>点击 <strong>downloads</strong>。</li>
+<li>滑到下面点击 <strong>MySQL Community (GPL) Downloads »</strong>。</li>
+<li>再点击 <strong>MySQL Community Server</strong>。</li>
+<li>选择这个版本进行下载 <strong>Windows (x86, 64-bit), ZIP Archive</strong>（免安装版）。</li>
+</ol>
+<h4 id="2-安装MySQL："><a href="#2-安装MySQL：" class="headerlink" title="2.安装MySQL："></a>2.安装MySQL：</h4><h5 id="1-解压下载好的文件（解压到哪里看你自己）。"><a href="#1-解压下载好的文件（解压到哪里看你自己）。" class="headerlink" title="1.解压下载好的文件（解压到哪里看你自己）。"></a>1.解压下载好的文件（解压到哪里看你自己）。</h5><p>PS：**<em>注意，安装的目录应当放在指定位置，绝对路径中避免出现中文，**</em></p>
+<h5 id="2-以管理员启动命令行。"><a href="#2-以管理员启动命令行。" class="headerlink" title="2.以管理员启动命令行。"></a>2.以管理员启动命令行。</h5><h5 id="3-命令行窗口移动到你解压的MySQL文件下bin内："><a href="#3-命令行窗口移动到你解压的MySQL文件下bin内：" class="headerlink" title="3.命令行窗口移动到你解压的MySQL文件下bin内："></a>3.命令行窗口移动到你解压的MySQL文件下bin内：</h5><pre><code>cd ../..
+X:  
+cd XXXXXX （D:\ruanjian\MySQL\mysql-8.0.21-winx64\bin）</code></pre>
+<p>(X代表你MySQL解压的盘, XXXXXX代表你放的路径)</p>
+<h5 id="4-安装MySQL的服务："><a href="#4-安装MySQL的服务：" class="headerlink" title="4.安装MySQL的服务："></a>4.安装MySQL的服务：</h5><pre><code>mysqld --install</code></pre>
+<p>Service successfully installed.(安装成功提示)。</p>
+<h5 id="5-初始化MySQL："><a href="#5-初始化MySQL：" class="headerlink" title="5.初始化MySQL："></a>5.初始化MySQL：</h5><pre><code>mysqld --initialize --console</code></pre>
+<p>PS：记住 root@localhost: 后面 初始化生成的随机密码</p>
+<pre><code>2020-10-01T09:08:10.996523Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ( &lt;flatW0fKlzB )&lt;-这个</code></pre>
+<h5 id="6-开启MySQL服务："><a href="#6-开启MySQL服务：" class="headerlink" title="6.开启MySQL服务："></a>6.开启MySQL服务：</h5><pre><code>net start mysql</code></pre>
+<h5 id="7-登录验证是否安装成功："><a href="#7-登录验证是否安装成功：" class="headerlink" title="7.登录验证是否安装成功："></a>7.登录验证是否安装成功：</h5><pre><code>mysql -u root -p</code></pre>
+<p>然后输入刚刚获得的随机密码。</p>
+<pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.21
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.</code></pre>
+<p>说明你的mysql已经安装成功！注意，，一定要先开启服务，不然会登陆失败，出现拒绝访问的提示符！！！</p>
+<h5 id="8-修改密码："><a href="#8-修改密码：" class="headerlink" title="8.修改密码："></a>8.修改密码：</h5><pre><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;root&#39;;(by 接着的是密码)</code></pre>
+<h5 id="9-设置环境变量："><a href="#9-设置环境变量：" class="headerlink" title="9.设置环境变量："></a>9.设置环境变量：</h5><ol>
+<li>点击”我的电脑”–&gt;”属性”–&gt;’’高级系统设置’’–&gt;’’环境变量’’</li>
+<li>点击”系统变量的新建”</li>
+</ol>
+<pre><code>变量名：mysql
+变量值：（安装路径）</code></pre>
+<ol start="3">
+<li>添加进入Path：</li>
+</ol>
+<p>点击新建</p>
+<pre><code>%mysql%bin</code></pre>
+<ol start="4">
+<li>在mysql目录下创建一个 my.ini 配置文件:</li>
+</ol>
+<pre><code>[mysqld]
+character-set-server=utf8
+bind-address = 0.0.0.0
+port = 3306
+default-storage-engine=INNODB
+
+[mysql]
+default-character-set=utf8
+
+[mysql.server]
+default-character-set=utf8
+
+[mysql_safe]
+default-character-set=utf8
+
+[client]
+default-character-set=utf8</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/Black or White.jpg" height=300 width=300></img>
+                    <p>jellyrain</p>
+                    <span>梦想的结局是破灭！</span>
+                    <dl>
+                        <dd><a href="https://github.com/jellyrain" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/jellyrain12" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">22 <p>文章</p></a></li>
+                    <li><a href="/categories">0 <p>分类</p></a></li>
+                    <li><a href="/tags">12 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-MySQL%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">1.MySQL的简单介绍：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-MySQL%E5%AE%89%E8%A3%85%E6%95%99%E5%AD%A6"><span class="toc-number">2.</span> <span class="toc-text">2.MySQL安装教学:</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            jellyrain
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.4" target="_blank" rel="noopener">v1.4.4</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['梦想的结局是破灭！', 'Dreams end in shambles!'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+</html>

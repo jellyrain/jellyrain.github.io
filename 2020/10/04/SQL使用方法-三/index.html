@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SQL使用方法 三 - Jellyrain</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="jellyrain,"> 
+    <meta name="description" content="SQL 高级语法教程(MySQL用法) 二
+1.SQL 约束 (Constraints)：约束用于限制加入表的数据的类型。可以在创建表时规定约束（通过 CREATE TABLE 语句），或者在表创建,"> 
+    <meta name="author" content="jellyrain"> 
+    <link rel="alternative" href="atom.xml" title="Jellyrain" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Jellyrain</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">SQL使用方法 三</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://wx2.sinaimg.cn/large/005LKmWPly1gkqzil2o7aj30xc0kkat1.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
+                
+                十月 04, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/10/04/SQL%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-%E4%B8%89/" title="SQL使用方法 三" class="">SQL使用方法 三</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    7.6k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    7 mins.
+                </span>
+                
+                
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>SQL 高级语法教程(MySQL用法) 二</p>
+<h3 id="1-SQL-约束-Constraints-："><a href="#1-SQL-约束-Constraints-：" class="headerlink" title="1.SQL 约束 (Constraints)："></a>1.SQL 约束 (Constraints)：</h3><p>约束用于限制加入表的数据的类型。<br>可以在创建表时规定约束（通过 CREATE TABLE 语句），或者在表创建之后也可以（通过 ALTER TABLE 语句）。<br>我们将主要探讨以下几种约束：</p>
+<ul>
+<li>NOT NULL(非空)</li>
+<li>UNIQUE(唯一键)</li>
+<li>PRIMARY KEY(主键)</li>
+<li>FOREIGN KEY(外键)</li>
+<li>CHECK(限制)</li>
+<li>DEFAULT(默认值)</li>
+</ul>
+<h4 id="1-NOT-NULL-非空-约束："><a href="#1-NOT-NULL-非空-约束：" class="headerlink" title="1.NOT NULL(非空) 约束："></a>1.NOT NULL(非空) 约束：</h4><p>NOT NULL(非空) 约束强制列不接受 NULL(空) 值。<br>NOT NULL(非空) 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或者更新记录。</p>
+<pre><code>CREATE TABLE Persons
+(
+Id_P int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+)</code></pre>
+<p>强制 “Id_P” 列和 “LastName” 列不接受 NULL(空) 值。</p>
+<h4 id="2-UNIQUE-唯一键-约束："><a href="#2-UNIQUE-唯一键-约束：" class="headerlink" title="2.UNIQUE(唯一键) 约束："></a>2.UNIQUE(唯一键) 约束：</h4><p>UNIQUE(唯一键) 约束唯一标识数据库表中的每条记录。<br>UNIQUE(唯一键) 和 PRIMARY KEY(主键) 约束均为列或列集合提供了唯一性的保证。<br>PS：每个表可以有多个 UNIQUE(唯一键) 约束，但是每个表只能有一个 PRIMARY KEY(主键) 约束。<br>创建表时：</p>
+<pre><code>UNIQUE ( 列名称 )                       (创建 UNIQUE 约束)
+
+CONSTRAINT 别名 UNIQUE ( 列1,列2 )      (如需别名 UNIQUE 约束，并定义多个列的 UNIQUE 约束)</code></pre>
+<p>表已创建时：</p>
+<pre><code>ALTER TABLE Persons
+    ADD UNIQUE ( 列名称 )                       (创建 UNIQUE 约束)
+或者：
+    ADD CONSTRAINT 别名 UNIQUE ( 列1,列2 )      (如需别名 UNIQUE 约束，并定义多个列的 UNIQUE 约束)</code></pre>
+<p>撤销 UNIQUE 约束：</p>
+<pre><code>ALTER TABLE Persons
+DROP INDEX 别名</code></pre>
+<h4 id="3-PRIMARY-KEY-主键-约束："><a href="#3-PRIMARY-KEY-主键-约束：" class="headerlink" title="3.PRIMARY KEY(主键) 约束："></a>3.PRIMARY KEY(主键) 约束：</h4><p>PRIMARY KEY(主键) 约束唯一标识数据库表中的每条记录。</p>
+<ol>
+<li>主键必须包含唯一的值。</li>
+<li>主键列不能包含 NULL(空) 值。</li>
+<li>每个表都应该有一个主键，并且每个表只能有一个主键。</li>
+</ol>
+<p>创建表时：</p>
+<pre><code>PRIMARY KEY ( 列名称 )                       (创建 PRIMARY KEY 约束)
+
+CONSTRAINT 别名 PRIMARY KEY ( 列1,列2 )      (如需别名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束)</code></pre>
+<p>表已创建时：</p>
+<pre><code>ALTER TABLE Persons
+    ADD PRIMARY KEY ( 列名称 )                       (创建 PRIMARY KEY 约束)
+或者：
+    ADD CONSTRAINT 别名 PRIMARY KEY ( 列1,列2 )      (如需别名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束)</code></pre>
+<p>撤销 PRIMARY KEY 约束：</p>
+<pre><code>ALTER TABLE Persons
+DROP PRIMARY KEY</code></pre>
+<h4 id="4-FOREIGN-KEY-外键-约束："><a href="#4-FOREIGN-KEY-外键-约束：" class="headerlink" title="4.FOREIGN KEY(外键) 约束："></a>4.FOREIGN KEY(外键) 约束：</h4><p>一个表中的 FOREIGN KEY(外键) 指向另一个表中的 PRIMARY KEY(主键)。<br>创建表时：</p>
+<pre><code>FOREIGN KEY ( 列名称 ) REFERENCES 主键表 ( 主键列 )                      (创建 FOREIGN KEY 约束)
+
+CONSTRAINT 别名 FOREIGN KEY ( 列名称 ) REFERENCES 主键表 ( 主键列 )      (如需别名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束)</code></pre>
+<p>表已创建时：</p>
+<pre><code>ALTER TABLE Persons
+    ADD FOREIGN KEY ( 列名称 ) REFERENCES 主键表 ( 主键列 )                       (创建 FOREIGN KEY 约束)
+或者：
+    ADD CONSTRAINT 别名 FOREIGN KEY ( 列名称 ) REFERENCES 主键表 ( 主键列 )       (如需别名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束)</code></pre>
+<p>撤销 FOREIGN KEY 约束：</p>
+<pre><code>ALTER TABLE Persons
+DROP FOREIGN KEY  ( 列名称 )</code></pre>
+<h4 id="5-CHECK-限制-约束："><a href="#5-CHECK-限制-约束：" class="headerlink" title="5.CHECK(限制) 约束："></a>5.CHECK(限制) 约束：</h4><p>用于限制列中的值的范围。<br>创建表时：</p>
+<pre><code>CHECK ( 列名称 &gt; 0 )                                        (创建 CHECK 约束,规定 列 必须只包含大于 0 的整数。)
+
+CONSTRAINT 别名 CHECK ( 列名称 &gt; 0 AND 列名称 = &#39;xxx&#39; )      (如需别名 CHECK 约束，并定义多个列的 CHECK 约束)</code></pre>
+<p>表已创建时：</p>
+<pre><code>ALTER TABLE Persons
+    ADD CHECK ( 列名称 &gt; 0 )                                        (创建 CHECK 约束,规定 列 必须只包含大于 0 的整数。)
+或者：
+    ADD CONSTRAINT 别名 CHECK ( 列名称 &gt; 0 AND 列名称 = &#39;xxx&#39; )      (如需别名 CHECK 约束，并定义多个列的 CHECK 约束)</code></pre>
+<p>撤销 UNIQUE 约束：</p>
+<pre><code>ALTER TABLE Persons
+DROP CHECK 别名</code></pre>
+<h4 id="6-DEFAULT-默认值-约束："><a href="#6-DEFAULT-默认值-约束：" class="headerlink" title="6.DEFAULT(默认值) 约束："></a>6.DEFAULT(默认值) 约束：</h4><p>用于向列中插入默认值。<br>创建表时：</p>
+<pre><code>列名称 数据类型 DEFAULT ( 列名称 )                          (创建 DEFAULT 约束)
+
+OrderDate( 订单日期 ) date( 日期 ) DEFAULT GETDATE()      (使用类似 GETDATE() 这样的函数，DEFAULT 约束也可以用于插入系统值)</code></pre>
+<p>表已创建时：</p>
+<pre><code>ALTER TABLE Persons
+ALTER 列名称 SET DEFAULT &#39; 内容 &#39;                       (创建 DEFAULT 约束)</code></pre>
+<p>撤销 UNIQUE 约束：</p>
+<pre><code>ALTER TABLE Persons
+ALTER 列名称 DROP DEFAULT</code></pre>
+<h3 id="2-SQL-CREATE-INDEX-语句："><a href="#2-SQL-CREATE-INDEX-语句：" class="headerlink" title="2.SQL CREATE INDEX 语句："></a>2.SQL CREATE INDEX 语句：</h3><p>用于在表中创建索引。</p>
+<pre><code>    CREATE INDEX 索引名称           (创建索引)
+    ON 表名称 ( 列名称 )
+或者：
+    CREATE UNIQUE INDEX 索引名称    (创建唯一索引)
+    ON 表名称 ( 列名称 )</code></pre>
+<h3 id="3-DROP-语句："><a href="#3-DROP-语句：" class="headerlink" title="3.DROP 语句："></a>3.DROP 语句：</h3><p>删除索引、表和数据库。</p>
+<pre><code>ALTER TABLE 表名称 DROP INDEX 索引名称   (删除表格中的索引)
+
+DROP TABLE 表名称                       (删除表 (表的结构、属性以及索引也会被删除) )
+
+DROP DATABASE 数据库名称                 (删除数据库)
+
+TRUNCATE TABLE 表名称                   (仅仅删除表格中的数据)</code></pre>
+<h3 id="4-SQL-ALTER-TABLE-语句："><a href="#4-SQL-ALTER-TABLE-语句：" class="headerlink" title="4.SQL ALTER TABLE 语句："></a>4.SQL ALTER TABLE 语句：</h3><p>用于在已有的表中添加、修改或删除列。</p>
+<pre><code>ALTER TABLE 表名称
+    ADD 列名称 数据类型              (表中添加列)
+
+    DROP COLUMN 列名称              (删除表中的列)
+
+    MODIFY COLUMN 列名称 数据类型    (修改表中列的数据类型)</code></pre>
+<h3 id="5-SQL-AUTO-INCREMENT-字段："><a href="#5-SQL-AUTO-INCREMENT-字段：" class="headerlink" title="5.SQL AUTO INCREMENT 字段："></a>5.SQL AUTO INCREMENT 字段：</h3><p>会在新记录插入表中时生成一个唯一的数字。<br>我们通常希望在每次插入新记录时，自动地创建主键字段的值。</p>
+<pre><code>列名称 数据类型 AUTO_INCREMENT               (默认 AUTO_INCREMENT 的开始值是 1)
+
+ALTER TABLE 表名称 AUTO_INCREMENT=100       (AUTO_INCREMENT 的开始值是 100)</code></pre>
+<h3 id="6-SQL-VIEW（视图）："><a href="#6-SQL-VIEW（视图）：" class="headerlink" title="6.SQL VIEW（视图）："></a>6.SQL VIEW（视图）：</h3><p>视图是基于 SQL 语句的结果集的可视化的表。<br>CREATE VIEW 语法:</p>
+<pre><code>CREATE VIEW [ 视图名称 ] AS
+SELECT 列名称
+FROM 表名称
+WHERE 条件</code></pre>
+<p>CREATE OR REPLACE VIEW(更新视图) 语法:</p>
+<pre><code>CREATE OR REPLACE VIEW [ 视图名称 ] AS
+SELECT 列名称
+FROM 表名称
+WHERE 条件</code></pre>
+<p>撤销视图:</p>
+<pre><code>DROP VIEW view_name [ 视图名称 ]</code></pre>
+<h3 id="7-SQL-Date-函数"><a href="#7-SQL-Date-函数" class="headerlink" title="7.SQL Date 函数:"></a>7.SQL Date 函数:</h3><p>日期。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NOW()</td>
+<td align="center">返回当前的日期和时间</td>
+</tr>
+<tr>
+<td align="center">CURDATE()</td>
+<td align="center">返回当前的日期</td>
+</tr>
+<tr>
+<td align="center">CURTIME()</td>
+<td align="center">返回当前的时间</td>
+</tr>
+<tr>
+<td align="center">DATE()</td>
+<td align="center">提取日期或日期/时间表达式的日期部分</td>
+</tr>
+<tr>
+<td align="center">EXTRACT()</td>
+<td align="center">返回日期/时间按的单独部分</td>
+</tr>
+<tr>
+<td align="center">DATE_ADD()</td>
+<td align="center">给日期添加指定的时间间隔</td>
+</tr>
+<tr>
+<td align="center">DATE_SUB()</td>
+<td align="center">从日期减去指定的时间间隔</td>
+</tr>
+<tr>
+<td align="center">DATEDIFF()</td>
+<td align="center">返回两个日期之间的天数</td>
+</tr>
+<tr>
+<td align="center">DATE_FORMAT()</td>
+<td align="center">用不同的格式显示日期/时间</td>
+</tr>
+</tbody></table>
+<p>Date 数据类型:<br>MySQL 使用下列数据类型在数据库中存储日期或日期/时间值：</p>
+<ul>
+<li>DATE - 格式 YYYY-MM-DD</li>
+<li>DATETIME - 格式: YYYY-MM-DD HH:MM:SS</li>
+<li>TIMESTAMP - 格式: YYYY-MM-DD HH:MM:SS</li>
+<li>YEAR - 格式 YYYY 或 YY</li>
+</ul>
+<h3 id="8-SQL-NULL-值"><a href="#8-SQL-NULL-值" class="headerlink" title="8.SQL NULL 值:"></a>8.SQL NULL 值:</h3><p>遗漏的未知数据。</p>
+<pre><code>列名称 IS NULL          (带有 NULL 值的记录)
+
+列名称 IS NOT NULL      (不带有 NULL 值的记录)</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/Black or White.jpg" height=300 width=300></img>
+                    <p>jellyrain</p>
+                    <span>梦想的结局是破灭！</span>
+                    <dl>
+                        <dd><a href="https://github.com/jellyrain" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/jellyrain12" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">22 <p>文章</p></a></li>
+                    <li><a href="/categories">0 <p>分类</p></a></li>
+                    <li><a href="/tags">12 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SQL-%E7%BA%A6%E6%9D%9F-Constraints-%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">1.SQL 约束 (Constraints)：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SQL-CREATE-INDEX-%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2.SQL CREATE INDEX 语句：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DROP-%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">3.DROP 语句：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SQL-ALTER-TABLE-%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">4.SQL ALTER TABLE 语句：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-SQL-AUTO-INCREMENT-%E5%AD%97%E6%AE%B5%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">5.SQL AUTO INCREMENT 字段：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-SQL-VIEW%EF%BC%88%E8%A7%86%E5%9B%BE%EF%BC%89%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">6.SQL VIEW（视图）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-SQL-Date-%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">7.SQL Date 函数:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-SQL-NULL-%E5%80%BC"><span class="toc-number">8.</span> <span class="toc-text">8.SQL NULL 值:</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            jellyrain
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.4" target="_blank" rel="noopener">v1.4.4</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['梦想的结局是破灭！', 'Dreams end in shambles!'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+</html>
