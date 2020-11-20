@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git代理和取消代理</title>
+      <link href="2020/11/20/Git%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/"/>
+      <url>2020/11/20/Git%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>github clone 太慢了 (⊙ˍ⊙)</p><h3 id="1-查询代理端口："><a href="#1-查询代理端口：" class="headerlink" title="1.查询代理端口："></a>1.查询代理端口：</h3><p>windows中打开 <strong>网络和Internet设置</strong> ——&gt; <strong>代理</strong> 查看代理端口，然后下面命令中的端口修改为对应的端口。</p><h3 id="2-代理："><a href="#2-代理：" class="headerlink" title="2.代理："></a>2.代理：</h3><h4 id="1-开启代理："><a href="#1-开启代理：" class="headerlink" title="1.开启代理："></a>1.开启代理：</h4><pre><code>git config --global http.proxy http://127.0.0.1:1081 git config --global https.proxy https://127.0.0.1:1081</code></pre><h4 id="2-关闭代理："><a href="#2-关闭代理：" class="headerlink" title="2.关闭代理："></a>2.关闭代理：</h4><pre><code>git config --global --unset http.proxygit config --global --unset https.proxy</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VS Code插件推荐</title>
       <link href="2020/11/10/VS-Code%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
       <url>2020/11/10/VS-Code%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>

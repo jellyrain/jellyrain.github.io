@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JSON教程 一 - Jellyrain</title>
+    <title>Git代理和取消代理 - Jellyrain</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="jellyrain,"> 
-    <meta name="description" content="JSON：JavaScript 对象表示法（JavaScript Object Notation）。
-1.什么是 JSON：
-JSON 指的是 JavaScript 对象表示法（JavaScript,"> 
+    <meta name="description" content="github clone 太慢了 (⊙ˍ⊙)
+1.查询代理端口：windows中打开 网络和Internet设置 ——&amp;gt; 代理 查看代理端口，然后下面命令中的端口修改为对应的端口。
+2.代理：,"> 
     <meta name="author" content="jellyrain"> 
     <link rel="alternative" href="atom.xml" title="Jellyrain" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -59,7 +59,7 @@ JSON 指的是 JavaScript 对象表示法（JavaScript,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">JSON教程 一</h3>
+        <h3 class="subtitle">Git代理和取消代理</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -81,29 +81,29 @@ JSON 指的是 JavaScript 对象表示法（JavaScript,">
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/65209552_p0_master1200.jpg) ">
+                url(/img/81832175_p0_master1200.jpg) ">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
                 <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
                 
-                十月 22, 2020
+                十一月 20, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/10/22/JSON%E6%95%99%E7%A8%8B-%E4%B8%80/" title="JSON教程 一" class="">JSON教程 一</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/11/20/Git%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/" title="Git代理和取消代理" class="">Git代理和取消代理</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    3.1k
+                    719
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    3 mins.
+                    1 mins.
                 </span>
                 
                 
@@ -111,7 +111,7 @@ JSON 指的是 JavaScript 对象表示法（JavaScript,">
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JSON/" rel="tag">JSON</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
             
         </div>
     </div>
@@ -132,62 +132,14 @@ JSON 指的是 JavaScript 对象表示法（JavaScript,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p>JSON：JavaScript 对象表示法（<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation）。</p>
-<h3 id="1-什么是-JSON："><a href="#1-什么是-JSON：" class="headerlink" title="1.什么是 JSON："></a>1.什么是 JSON：</h3><ul>
-<li>JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）</li>
-<li>JSON 是轻量级的文本数据交换格式</li>
-<li>JSON 独立于语言 *</li>
-<li>JSON 具有自我描述性，更易理解</li>
-<li>JSON 使用 JavaScript 语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。</li>
-</ul>
-<h3 id="2-JSON-语法："><a href="#2-JSON-语法：" class="headerlink" title="2.JSON 语法："></a>2.JSON 语法：</h3><h4 id="1-JSON-语法规则："><a href="#1-JSON-语法规则：" class="headerlink" title="1.JSON 语法规则："></a>1.JSON 语法规则：</h4><p>JSON 语法是 JavaScript 对象表示法语法的子集。</p>
-<ul>
-<li>数据在名称/值对中</li>
-<li>数据由逗号分隔</li>
-<li>花括号保存对象</li>
-<li>方括号保存数组</li>
-</ul>
-<h4 id="2-JSON-名称-值对："><a href="#2-JSON-名称-值对：" class="headerlink" title="2.JSON 名称/值对："></a>2.JSON 名称/值对：</h4><p>JSON 数据的书写格式是：名称/值对。<br>名称/值对包括字段名称（在双引号中），后面写一个冒号，然后是值：</p>
-<pre><code>&quot;firstName&quot; : &quot;John&quot;</code></pre>
-<p>这很容易理解，等价于这条 JavaScript 语句：</p>
-<pre><code>firstName = &quot;John&quot;</code></pre>
-<h4 id="3-JSON-值："><a href="#3-JSON-值：" class="headerlink" title="3.JSON 值："></a>3.JSON 值：</h4><p>JSON 值可以是：</p>
-<ul>
-<li>数字（整数或浮点数）</li>
-<li>字符串（在双引号中）</li>
-<li>逻辑值（true 或 false）</li>
-<li>数组（在方括号中）</li>
-<li>对象（在花括号中）</li>
-<li>null</li>
-</ul>
-<h4 id="4-JSON-对象："><a href="#4-JSON-对象：" class="headerlink" title="4.JSON 对象："></a>4.JSON 对象：</h4><p>JSON 对象在花括号中书写：<br>对象可以包含多个名称/值对：</p>
-<pre><code>&#123; &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; &#125;</code></pre>
-<p>这一点也容易理解，与这条 JavaScript 语句等价：</p>
-<pre><code>firstName = &quot;John&quot;
-lastName = &quot;Doe&quot;</code></pre>
-<h4 id="5-JSON-数组："><a href="#5-JSON-数组：" class="headerlink" title="5.JSON 数组："></a>5.JSON 数组：</h4><p>JSON 数组在方括号中书写：<br>数组可包含多个对象：</p>
-<pre><code>&#123;
-&quot;employees&quot;: [
-&#123; &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; &#125;,
-&#123; &quot;firstName&quot;:&quot;Anna&quot; , &quot;lastName&quot;:&quot;Smith&quot; &#125;,
-&#123; &quot;firstName&quot;:&quot;Peter&quot; , &quot;lastName&quot;:&quot;Jones&quot; &#125;
-]
-&#125;</code></pre>
-<ul>
-<li>PS：对象 “employees” 是包含三个对象的数组。每个对象代表一条关于某人（有姓和名）的记录。</li>
-</ul>
-<h4 id="6-JSON-使用-JavaScript-语法："><a href="#6-JSON-使用-JavaScript-语法：" class="headerlink" title="6.JSON 使用 JavaScript 语法："></a>6.JSON 使用 JavaScript 语法：</h4><p>因为 JSON 使用 JavaScript 语法，所以无需额外的软件就能处理 JavaScript 中的 JSON。</p>
-<pre><code>var employees = [
-&#123; &quot;firstName&quot;:&quot;Bill&quot; , &quot;lastName&quot;:&quot;Gates&quot; &#125;,
-&#123; &quot;firstName&quot;:&quot;George&quot; , &quot;lastName&quot;:&quot;Bush&quot; &#125;,
-&#123; &quot;firstName&quot;:&quot;Thomas&quot; , &quot;lastName&quot;: &quot;Carter&quot; &#125;
-];</code></pre>
-<p>可以像这样访问 JavaScript 对象数组中的第一项：</p>
-<pre><code>employees[0].lastName;</code></pre>
-<p>返回的内容是：</p>
-<pre><code>Gates</code></pre>
-<p>可以像这样修改数据：</p>
-<pre><code>employees[0].lastName = &quot;Jobs&quot;;</code></pre>
+            <p>github clone 太慢了 (⊙ˍ⊙)</p>
+<h3 id="1-查询代理端口："><a href="#1-查询代理端口：" class="headerlink" title="1.查询代理端口："></a>1.查询代理端口：</h3><p>windows中打开 <strong>网络和Internet设置</strong> ——&gt; <strong>代理</strong> 查看代理端口，然后下面命令中的端口修改为对应的端口。</p>
+<h3 id="2-代理："><a href="#2-代理：" class="headerlink" title="2.代理："></a>2.代理：</h3><h4 id="1-开启代理："><a href="#1-开启代理：" class="headerlink" title="1.开启代理："></a>1.开启代理：</h4><pre><code>git config --global http.proxy http://127.0.0.1:1081 
+
+git config --global https.proxy https://127.0.0.1:1081</code></pre>
+<h4 id="2-关闭代理："><a href="#2-关闭代理：" class="headerlink" title="2.关闭代理："></a>2.关闭代理：</h4><pre><code>git config --global --unset http.proxy
+
+git config --global --unset https.proxy</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -229,7 +181,7 @@ lastName = &quot;Doe&quot;</code></pre>
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-JSON%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">1.什么是 JSON：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-JSON-%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2.JSON 语法：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E8%AF%A2%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">1.查询代理端口：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2.代理：</span></a></li></ol>
                 </div>
             </div>
             
